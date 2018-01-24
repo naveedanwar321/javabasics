@@ -3,6 +3,13 @@
  */
 package com.example.use;
 
+import java.util.List;
+import java.util.ArrayList;
+
+import com.example.bill.Bill;
+import com.example.bill.BillImpl;
+import com.example.bill.Product;
+import com.example.bill.ProductImpl;
 import com.example.hello.HelloWorld;
 import com.example.hello.HelloWorldImpl;
 import com.simple.calculator.SimpleCalculator;
@@ -20,7 +27,7 @@ public class Main {
      */
     public static void main(String[] args) {
         
-        // Class Work 
+        // Class Work - 22th Jan 2018
         
         HelloWorld myObject = new HelloWorldImpl();
         
@@ -44,7 +51,7 @@ public class Main {
         System.out.println(fullName);
                 
         
-        // Home Work
+        // Home Work - 22th Jan 2018
         
         SimpleCalculator simpleCalculator = new SimpleCalculatorImpl();
         
@@ -59,6 +66,23 @@ public class Main {
         
         int p = simpleCalculator.divideTwoNumbers(3, 4);
         System.out.println(p);
+        
+        // Class Work - 24th Jan 2018
+        Product product = new ProductImpl("Remote",4.5f);
+        System.out.println(product.getItem());
+        System.out.println(product.getPrice());
+        
+        Product product2 = new ProductImpl("Laptop",4004.5f);
+        System.out.println(product2.getItem());
+        System.out.println(product2.getPrice());
+        
+        List<Product> products = new ArrayList<Product>();
+        products.add(product);
+        products.add(product2);
+        
+        Bill bill = new BillImpl(products);
+        System.out.println(bill.getQuantity());
+        System.out.println(bill.getPrice());
         
     }
 
