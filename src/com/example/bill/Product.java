@@ -20,4 +20,9 @@ public interface Product {
     * @return Item price
     */
    float getPrice();
+   /**
+    * 
+    * @return 
+    */
+    int getQuantity();
 }

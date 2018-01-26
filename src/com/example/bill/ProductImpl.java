@@ -1,5 +1,8 @@
 package com.example.bill;
 
+import com.simple.calculator.SimpleCalculator;
+import com.simple.calculator.SimpleCalculatorImpl;
+
 /**
  * This class implements Billing using {@link Product}. 
  * 
@@ -10,7 +13,8 @@ public class ProductImpl implements Product {
     
     private String itemName;
     private float itemPrice;
-    
+    private int itemQuantity;
+  
     private String madeIn;
     
     /**
@@ -19,9 +23,12 @@ public class ProductImpl implements Product {
      * @param itemPrice Price of item
      */
     public ProductImpl(String itemName, //
-            float itemPrice){
+            float itemPrice, //
+            int itemQuantity){
         this.itemName = itemName;
         this.itemPrice = itemPrice;
+        this.itemQuantity= itemQuantity;
+       
     }
     
     @Override
@@ -34,13 +41,17 @@ public class ProductImpl implements Product {
         return this.itemPrice;
     }
     
+     @Override
+    public int getQuantity() {
+       return this.itemQuantity;
+    }
+     
     /**
      * @return the madeIn
      */
     public final String getMadeIn() {
         return madeIn;
     }
-
     
     /**
      * @param madeIn the madeIn to set
@@ -48,5 +59,7 @@ public class ProductImpl implements Product {
     public final void setMadeIn(String madeIn) {
         this.madeIn = madeIn;
     }
+
+   
 
 }

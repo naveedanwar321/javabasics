@@ -68,22 +68,33 @@ public class Main {
         System.out.println(p);
         
         // Class Work - 24th Jan 2018
-        Product product = new ProductImpl("Remote",4.5f);
-        System.out.println(product.getItem());
-        System.out.println(product.getPrice());
+        Product product = new ProductImpl("Remote",2000f,3);
+        System.out.println("Name of item is "+product.getItem());
+        System.out.println("Price of item is "+product.getPrice());
+        System.out.println("Quantity of item is "+product.getQuantity());
+        System.out.println("Total Price with Quantity "+product.getPrice()*product.getQuantity());
+        System.out.println("Tax " +((product.getPrice()+product.getQuantity())/100)*3);
+        System.out.println(" ");
         
-        Product product2 = new ProductImpl("Laptop",4004.5f);
-        System.out.println(product2.getItem());
-        System.out.println(product2.getPrice());
+        Product product2 = new ProductImpl("Laptop",4004.5f,4);
+        System.out.println("Name of item is " +product2.getItem());
+        System.out.println("Price of item is "+product2.getPrice());
+        System.out.println("Quantity of item is "+product2.getQuantity());
+        System.out.println("Total Price with Quantity "+product2.getPrice()*product2.getQuantity());
+        System.out.println("Tax " +((product2.getPrice()+product2.getQuantity())/100)*3);
+        System.out.println(" ");
         
-        List<Product> products = new ArrayList<Product>();
+        List<Product> products = new ArrayList<>();
         products.add(product);
         products.add(product2);
-        
+       
         Bill bill = new BillImpl(products);
-        System.out.println(bill.getQuantity());
-        System.out.println(bill.getPrice());
+        System.out.println("Total Quantity " +bill.getQuantity());
+        System.out.println("Total Price " +bill.getPrice());
+        System.out.println("Total Taxes " +bill.productTax());
         
     }
 
 }
+
+
